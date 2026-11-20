@@ -73,14 +73,16 @@ General coding guide, applies to all languages and markups.
 
 ## Validation
 
-- **V1:** Write tests to protect actual meaningful behavior, not to demonstrate that code was changed.
+- **V1:** Use tests to protect actual meaningful behavior, not to demonstrate that code was changed.
   - **V1.1:** Before adding a test, identify the concrete failure it would catch and why that failure matters.
   - **V1.2:** Prioritize business rules, state transitions, failure handling, and integration contracts.
   - **V1.3:** Prefer a small set of focused scenarios over exhaustive combinations without distinct failure risks.
   - **V1.4:** Do not add redundant coverage merely to increase test counts or coverage percentages.
+  - **V1.5:** Keep an eye on the number of tests; A few actually useful tests are better than dozens or hundreds of useless or lying tests.
 - **V2:** Assert observable outcomes and required contracts, not incidental implementation details.
-  - **V2.1:** Do not freeze prose, formatting, private structure, or internal sequences unless those details are explicit requirements.
-  - **V2.2:** Use mocks for boundaries the test should not exercise; do not mock away the behavior the test is intended to verify.
+  - **V2.1:** Do not mock away the behavior the test is intended to verify, that would be a lying test. Use mocks when necessary only for boundaries the test should not exercise.
+  - **V2.2:** Do not freeze prose, formatting, private structure, configurable parameters, internal sequences and such. Tests that freeze stuff like that are not useful and only get in the way of later changes.
+  - **V2.3:** Do not treat existing implementation choices as requirements. Avoid exact mock-call assertions that freeze constructor arguments, tuning values, or wiring details unless those details are explicit acceptance criteria. Prefer testing the behavior those choices must produce.
 - **V3:** Keep tests aligned with current requirements.
   - **V3.1:** When behavior intentionally changes, update or remove tests for the old behavior. Do not retain obsolete production code solely to satisfy obsolete tests.
   - **V3.2:** When a test fails, determine whether it exposes a regression or an outdated expectation before changing either the test or production code.

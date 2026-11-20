@@ -32,6 +32,8 @@ prompt() {
     if ! IFS= read -r -s -n 1 ch; then
       printf '\nERROR: Could not read a prompt response.\n' >&2
       return 1
+    else
+      printf '\n' >&2
     fi
     if [[ -z $ch && -n $default ]]; then
       ch=$default
@@ -86,7 +88,7 @@ ensure_symlink() {
     elif "${run[@]}" test -L "$dst"; then
       question="'$dst' exists and is a symlink but doesn't resolve to '$src'; Overwrite ?"
     else
-      question="'$dst' exists and is not a symlink"
+      question="'$dst' exists and is not a symlink; Overwrite ?"
     fi
     choice=$(prompt "$question") || return
     if [[ $choice != 1 ]]; then
