@@ -1,0 +1,4 @@
+interface:
+  display_name: "Decide"
+  short_description: "Explore intent and resolve meaningful tradeoffs"
+  default_prompt: "Use $decide to explore my intent and resolve meaningful implementation decisions with clear context and tradeoffs."

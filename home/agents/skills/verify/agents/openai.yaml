@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify"
+  short_description: "Check an exact revision in a fresh context"
+  default_prompt: "Use $verify to check this exact revision against its task and acceptance criteria."

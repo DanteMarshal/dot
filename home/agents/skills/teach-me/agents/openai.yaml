@@ -1,0 +1,4 @@
+interface:
+  display_name: "Teach Me"
+  short_description: "Adaptive, research-backed Socratic tutoring"
+  default_prompt: "Use $teach-me to assess what I know, build a learning tree, and teach me this topic interactively."

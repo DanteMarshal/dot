@@ -1,0 +1,31 @@
+set unstable
+set positional-arguments
+
+import '../lib/display_help.just'
+
+# List available repository commands.
+[arg('is_help_requested', long='help', short='h', value='true', help='Show recipe usage')]
+default is_help_requested='false':
+    #!/usr/bin/env bash
+    set -euo pipefail
+    {{ display_help_sh(is_help_requested) }}
+    just --list
+
+# import 'tooling/build.just'
+# import 'tooling/validation.just'
+
+# Example Command
+[arg('is_help_requested', long='help', short='h', value='true', help='Show recipe usage')]
+[arg('example_arg', help='Example positional string argument')]
+example_recipe example_arg is_help_requested='false':
+    #!/usr/bin/env bash
+    set -euo pipefail
+    {{ display_help_sh(is_help_requested) }}
+    echo {{ quote(example_arg) }}
+
+# Example Python command.
+[arg('is_help_requested', long='help', short='h', value='true', help='Show recipe usage')]
+example_python_recipe is_help_requested='false':
+    #!/usr/bin/env python3
+    {{ display_help_py(is_help_requested) }}
+    print("Hello from Python!")

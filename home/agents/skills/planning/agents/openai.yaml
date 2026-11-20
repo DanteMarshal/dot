@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planning"
+  short_description: "Structured planning in plan mode"
+  default_prompt: "Use $planning to turn this request into a concrete plan with the required clarifying questions and tradeoffs."
