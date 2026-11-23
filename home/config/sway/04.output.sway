@@ -1,0 +1,7 @@
+### Monitors: eDP-1
+  # Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
+  output eDP-1 resolution 1920x1080 position 0,1080
+  output eDP-1 bg '/home/dante/media/pictures/background/pc/Mikayuu 001.png' fill
+### Monitors: HDMI-A-1
+  output HDMI-A-1 resolution 1920x1080 position 0,0
+  output HDMI-A-1 bg '/home/dante/media/pictures/background/pc/Mikayuu 002.jpg' fill
