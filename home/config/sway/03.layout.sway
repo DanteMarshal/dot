@@ -1,0 +1,105 @@
+### Key bindings: Focus and Move
+  # Move focus to the parent container
+  bindsym $mod+q focus parent
+  bindsym $mod+l focus parent
+  # Move your focus around
+  bindsym $mod+n focus left
+  bindsym $mod+e focus down
+  bindsym $mod+u focus up
+  bindsym $mod+i focus right
+  bindsym $mod+left focus left
+  bindsym $mod+down focus down
+  bindsym $mod+up focus up
+  bindsym $mod+right focus right
+  bindsym $mod+a focus left
+  bindsym $mod+r focus down
+  bindsym $mod+w focus up
+  bindsym $mod+s focus right
+  # Move the focused window with the same, but add Shift
+  bindsym $mod+shift+n move left
+  bindsym $mod+shift+e move down
+  bindsym $mod+shift+u move up
+  bindsym $mod+shift+i move right
+  bindsym $mod+shift+left move left
+  bindsym $mod+shift+down move down
+  bindsym $mod+shift+up move up
+  bindsym $mod+shift+right move right
+  bindsym $mod+shift+a move left
+  bindsym $mod+shift+r move down
+  bindsym $mod+shift+w move up
+  bindsym $mod+shift+s move right
+### Key bindings: Workspaces
+  # Switch to workspace
+  bindsym $mod+1 workspace number 1
+  bindsym $mod+2 workspace number 2
+  bindsym $mod+3 workspace number 3
+  bindsym $mod+4 workspace number 4
+  bindsym $mod+5 workspace number 5
+  bindsym $mod+6 workspace number 6
+  bindsym $mod+7 workspace number 7
+  bindsym $mod+8 workspace number 8
+  bindsym $mod+9 workspace number 9
+  bindsym $mod+0 workspace number 10
+  # Move focused container to workspace
+  bindsym $mod+shift+1 move container to workspace number 1
+  bindsym $mod+shift+2 move container to workspace number 2
+  bindsym $mod+shift+3 move container to workspace number 3
+  bindsym $mod+shift+4 move container to workspace number 4
+  bindsym $mod+shift+5 move container to workspace number 5
+  bindsym $mod+shift+6 move container to workspace number 6
+  bindsym $mod+shift+7 move container to workspace number 7
+  bindsym $mod+shift+8 move container to workspace number 8
+  bindsym $mod+shift+9 move container to workspace number 9
+  bindsym $mod+shift+0 move container to workspace number 10
+  # Note: workspaces can have any name you want, not just numbers.
+  # We just use 1-10 as the default.
+### Key bindings: Layout stuff
+  # You can "split" the current object of your focus with $mod+b or $mod+v, for horizontal and vertical splits respectively.
+  bindsym $mod+b splith
+  bindsym $mod+v splitv
+  # Switch the current container between different layout styles
+  bindsym $mod+tab layout toggle split tabbed
+    # Example From Defaults
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
+    # bindsym $mod+e layout toggle split
+  # Make the current focus fullscreen
+  bindsym $mod+f11 fullscreen
+  # Toggle the current focus between tiling and floating mode
+  bindsym $mod+shift+f floating toggle
+  # Swap focus between the tiling area and the floating area
+  bindsym $mod+f focus mode_toggle
+### Key bindings: Scratchpad
+  # Sway has a "scratchpad", which is a bag of holding for windows.
+  # You can send windows there and get them back later.
+  # Move the currently focused window to the scratchpad
+  bindsym $mod+shift+minus move scratchpad
+  # Show the next scratchpad window or hide the focused scratchpad window.
+  # If there are multiple scratchpad windows, this command cycles through them.
+  bindsym $mod+minus scratchpad show
+### Key bindings: Resizing containers
+  mode "resize" {
+    bindsym up resize shrink height 64px
+    bindsym down resize grow height 64px
+    bindsym left resize shrink width 64px
+    bindsym right resize grow width 64px
+    bindsym u resize shrink height 64px
+    bindsym e resize grow height 64px
+    bindsym n resize shrink width 64px
+    bindsym i resize grow width 64px
+
+    bindsym ctrl+up resize shrink height 256px
+    bindsym ctrl+down resize grow height 256px
+    bindsym ctrl+left resize shrink width 256px
+    bindsym ctrl+right resize grow width 256px
+    bindsym ctrl+u resize shrink height 256px
+    bindsym ctrl+e resize grow height 256px
+    bindsym ctrl+n resize shrink width 256px
+    bindsym ctrl+i resize grow width 256px
+
+    # Return to default mode
+    bindsym return mode "default"
+    bindsym escape mode "default"
+    bindsym $mod+m mode "default"
+  }
+  bindsym $mod+m mode "resize"

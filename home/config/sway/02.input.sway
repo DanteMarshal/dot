@@ -1,0 +1,50 @@
+### Input configuration
+  input type:touchpad {
+    tap enabled
+    tap_button_map lrm
+    middle_emulation enabled
+  }
+  input type:keyboard {
+    xkb_layout "us,ir"
+    xkb_variant "colemak,"
+  }
+  bindsym $mod+space input type:keyboard xkb_switch_layout next
+### Key bindings: Basics:
+  # Start your launcher
+  bindsym $mod+return exec $menu
+  # Open Terminal
+  bindsym $mod+t exec $term
+  # Kill focused window
+  bindsym $mod+shift+q kill
+  # Drag floating windows by holding down $mod and left mouse button.
+  # Resize them with right mouse button + $mod.
+  # Despite the name, also works for non-floating windows.
+  # Change normal to inverse to use left mouse button for resizing and right
+  # mouse button for dragging.
+  floating_modifier $mod normal
+  # Reload the configuration file
+  bindsym $mod+shift+c reload
+  # Exit sway (logs you out of your Wayland session)
+  bindsym $mod+shift+escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+### Key bindings: Notifications
+  # Dismiss the most recent notification
+  bindsym $mod+backspace exec makoctl dismiss
+  # Dismiss all notifications
+  bindsym $mod+shift+backspace exec makoctl dismiss --all
+### Key bindings: Utilities
+  # Special keys to adjust volume via PulseAudio
+  bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+  bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+  bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+  bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+  # Special keys to control media via playerctl
+  bindsym --locked XF86AudioPlay exec playerctl play-pause
+  bindsym --locked XF86AudioPause exec playerctl play-pause
+  bindsym --locked XF86AudioPrev exec playerctl previous
+  bindsym --locked XF86AudioNext exec playerctl next
+  bindsym --locked XF86AudioStop exec playerctl stop
+  # Special keys to adjust brightness via brightnessctl
+  bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+  bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+  # Special key to take a screenshot with grim
+  bindsym Print exec grim

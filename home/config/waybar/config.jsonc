@@ -1,0 +1,35 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 30,
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-right": ["sway/language", "pulseaudio", "battery", "tray", "clock"],
+  "sway/language": {
+    "format": "{shortDescription}",
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    "tooltip": true
+  },
+  "pulseaudio": {
+    "format": "Vol {volume}%",
+    "format-muted": "Muted",
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "scroll-step": 5
+  },
+  "battery": {
+    "format": "Bat {capacity}%",
+    "format-charging": "Charging {capacity}%",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  }
+}

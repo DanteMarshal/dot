@@ -1,0 +1,10 @@
+### Appearance
+  default_border pixel 2
+  #                       title border  title bg  title text  indicator  window border
+  client.focused          #000080       #000080   #ffffff     #808000    #800000
+  client.unfocused        #000000       #000000   #ffffff     #808000    #000000
+  client.focused_inactive #000020       #000020   #ffffff     #202000    #200000
+### Status Bar
+  bar {
+    swaybar_command waybar
+  }

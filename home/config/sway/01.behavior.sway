@@ -4,6 +4,9 @@
   # Enable systemd-integration
   exec "systemctl --user import-environment {,WAYLAND_}DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
   exec swaymsg -t subscribe '["shutdown"]' && systemctl --user stop sway-session.target
+### Tray applets
+  exec nm-applet --indicator
+  exec blueman-applet
 ### Focus
   focus_follows_mouse no
 ### Idle configuration

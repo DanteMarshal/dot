@@ -1,0 +1,15 @@
+profile desk-external {
+  output eDP-1 disable
+  output HDMI-A-1 enable position 0,0
+}
+profile desk-extend {
+  output eDP-1 enable position 0,1080
+  output HDMI-A-1 enable position 0,0
+}
+profile desk-laptop {
+  output eDP-1 enable position 0,0
+  output HDMI-A-1 disable
+}
+profile laptop {
+  output eDP-1 enable
+}
