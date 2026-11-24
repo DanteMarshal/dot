@@ -12,7 +12,14 @@
   "pulseaudio": {
     "format": "Vol {volume}%",
     "format-muted": "Muted",
-    "on-click": "pavucontrol",
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/audio-menu.xml",
+    "menu-actions": {
+      "laptop": "sh \"$HOME/.config/waybar/audio-preset.sh\" laptop",
+      "speakers": "sh \"$HOME/.config/waybar/audio-preset.sh\" speakers",
+      "headset": "sh \"$HOME/.config/waybar/audio-preset.sh\" headset",
+      "mixer": "pavucontrol"
+    },
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 5
   },

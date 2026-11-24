@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <child>
+      <object class="GtkMenuItem" id="laptop">
+        <property name="label">Laptop — internal mic + internal speakers</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="speakers">
+        <property name="label">Speakers — internal mic + 3.5 mm output</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="headset">
+        <property name="label">Headset — headset mic + 3.5 mm output</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem"/>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="mixer">
+        <property name="label">Open mixer…</property>
+      </object>
+    </child>
+  </object>
+</interface>

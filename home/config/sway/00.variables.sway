@@ -5,4 +5,4 @@
   # Preferred terminal emulator
   set $term kitty
   # Preferred application launcher
-  set $menu wmenu-run
+  set $menu "wmenu-run -i -l 32"
