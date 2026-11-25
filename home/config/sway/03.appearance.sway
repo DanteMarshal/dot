@@ -1,3 +1,5 @@
+### Themes
+  seat * xcursor_theme Vimix-cursors 24
 ### Appearance
   default_border pixel 2
   #                       title border  title bg  title text  indicator  window border

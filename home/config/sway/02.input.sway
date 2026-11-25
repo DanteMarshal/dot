@@ -7,7 +7,7 @@
   input type:keyboard {
     xkb_layout "us,ir"
     xkb_variant "colemak,"
-    xkb_options "caps:capslock"
+    xkb_options "caps:capslock,numpad:microsoft"
   }
   bindsym $mod+space input type:keyboard xkb_switch_layout next
 ### Key bindings: Basics:

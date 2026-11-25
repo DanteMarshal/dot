@@ -1,0 +1,1 @@
+timeout 300 '$HOME/.config/swayidle/timeout.sh' resume '$HOME/.config/swayidle/resume.sh'
