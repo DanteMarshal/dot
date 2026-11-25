@@ -7,23 +7,27 @@
   input type:keyboard {
     xkb_layout "us,ir"
     xkb_variant "colemak,"
+    xkb_options "caps:capslock"
   }
   bindsym $mod+space input type:keyboard xkb_switch_layout next
 ### Key bindings: Basics:
+  # Reload the configuration file
+  bindsym $mod+shift+c reload
+
   # Start your launcher
   bindsym $mod+return exec $menu
+
   # Open Terminal
   bindsym $mod+t exec $term
+
   # Kill focused window
-  bindsym $mod+shift+q kill
+  bindsym $mod+ctrl+shift+q kill
+
   # Drag floating windows by holding down $mod and left mouse button.
   # Resize them with right mouse button + $mod.
   # Despite the name, also works for non-floating windows.
-  # Change normal to inverse to use left mouse button for resizing and right
-  # mouse button for dragging.
+  # Change normal to inverse to use left mouse button for resizing and right mouse button for dragging.
   floating_modifier $mod normal
-  # Reload the configuration file
-  bindsym $mod+shift+c reload
   # Exit sway (logs you out of your Wayland session)
   bindsym $mod+shift+escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 ### Key bindings: Notifications
